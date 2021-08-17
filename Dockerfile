@@ -1,6 +1,7 @@
 #Grab the latest alpine image
 FROM alpine:latest
 
+RUN apk add --no-cache --update curl bash
 
 # Add our code
 RUN mkdir -p /app/java-getting-started/
