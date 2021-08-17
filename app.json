@@ -1,0 +1,6 @@
+{
+	"name": "docker-getting-started",
+	"stack": "container",
+	"description": "",
+	"addons": [ "heroku-postgresql" ]
+}
