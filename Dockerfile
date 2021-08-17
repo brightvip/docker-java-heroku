@@ -14,7 +14,7 @@ RUN  curl -s --retry 3 -L -O https://lang-jvm.s3.amazonaws.com/maven-3.3.3.tar.g
 
 
 
-RUN export M2_HOME=/app/java-getting-started/maven3.3/.maven && export PATH=/app/java-getting-started/maven3.3/.maven/bin:$PATH && java -version && mvn -version
+RUN export M2_HOME=/app/java-getting-started/maven3.3/.maven && export PATH=/app/java-getting-started/maven3.3/.maven/bin:$PATH && mvn package -DskipTests
 
 
 # Expose is NOT supported by Heroku
