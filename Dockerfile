@@ -14,6 +14,7 @@ RUN  curl -s --retry 3 -L -O https://lang-jvm.s3.amazonaws.com/jdk/cedar-14/open
 # Install Maven
 RUN  curl -s --retry 3 -L -O https://lang-jvm.s3.amazonaws.com/maven-3.3.3.tar.gz && mkdir maven3.3 &&  tar -zxvf maven-3.3.3.tar.gz -C maven3.3 && chmod +x maven3.3/.maven/bin/mvn
 
+RUN  pwd && ls -l /app/java-getting-started/openjdk1.8 && ls -l /app/java-getting-started/maven3.3/
 
 RUN export JAVA_HOME=/app/java-getting-started/openjdk1.8 && export M2_HOME=/app/java-getting-started/maven3.3/.maven && export  PATH=/app/java-getting-started/openjdk1.8/bin:/app/java-getting-started/maven3.3/.maven/bin:$PATH && java -version && mvn -version
 
