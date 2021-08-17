@@ -10,9 +10,9 @@ WORKDIR /app/java-getting-started/
 
 
 # Install the JDK
-RUN  curl -s --retry 3 -L -O https://lang-jvm.s3.amazonaws.com/jdk/cedar-14/openjdk1.8-latest.tar.gz && tar -zxvf openjdk1.8-latest.tar.gz -C openjdk1.8
+RUN  curl -s --retry 3 -L -O https://lang-jvm.s3.amazonaws.com/jdk/cedar-14/openjdk1.8-latest.tar.gz && mkdir openjdk1.8 && tar -zxvf openjdk1.8-latest.tar.gz -C openjdk1.8
 # Install Maven
-RUN  curl -s --retry 3 -L -O https://lang-jvm.s3.amazonaws.com/maven-3.3.3.tar.gz &&  tar -zxvf maven-3.3.3.tar.gz -C maven3.3 && chmod +x maven3.3/.maven/bin/mvn
+RUN  curl -s --retry 3 -L -O https://lang-jvm.s3.amazonaws.com/maven-3.3.3.tar.gz && mkdir maven3.3 &&  tar -zxvf maven-3.3.3.tar.gz -C maven3.3 && chmod +x maven3.3/.maven/bin/mvn
 
 
 RUN export JAVA_HOME=/app/openjdk1.8 && export M2_HOME=/app/maven3.3/.maven && export  PATH=/app/openjdk1.8/bin:/app/maven3.3/.maven/bin:$PATH && java -version && mvn -version
